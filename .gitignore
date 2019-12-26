@@ -1,0 +1,11 @@
+/.vs
+/CMakeFiles
+/Debug
+/*.vcxproj
+/*.filters
+/*.user
+/cmake_install.cmake
+/data
+/CNN-CatClassificationCPP.dir
+/CNN-CatClassificationCPP.sln
+/CMakeCache.txt
