@@ -9,10 +9,13 @@ public:
 	DataLoader();
 	~DataLoader();
 
-	std::pair<vector<string>, vector<string>> LoadDataFromFolder(vector<string> folders_name);
+	map<string, vector<std::pair<string, string>>> LoadDataFromFolder(vector<string> folders_name);
 
 	template <typename DirLambdaFunction>
 	void SearchDir(const string& name, const string& folderName, int depth, DirLambdaFunction&& dirFunction);
+
+private:
+	map<string, vector<std::pair<string, string>>> m_dataMap;
 };
 
 template<typename DirLambdaFunction>
@@ -26,7 +29,7 @@ inline void DataLoader::SearchDir(const string& name, const string& folderName, 
 
 	while ((entry = readdir(dir)) != NULL) {
 		if (entry->d_type == DT_DIR) {
-			//char path[PATH_MAX];
+
 			if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
 				continue;
 

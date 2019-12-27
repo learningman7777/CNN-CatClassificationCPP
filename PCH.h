@@ -10,9 +10,11 @@
 
 #include <vector>
 #include <string>
+#include <map>
 #include "dirent.h"
 
 using std::vector;
 using std::string;
+using std::map;
 using std::cout;
 using std::endl;
